@@ -1,1 +1,1 @@
-Using this repo to test my reinforcement learning methods which is based on [Verl](https://github.com/Verl-AI/verl).
+Using this repo to test my reinforcement learning methods which is based on [VeRL](https://github.com/volcengine/verl).
