@@ -645,6 +645,7 @@ class RayPPOTrainer:
         return gen_batch
 
     def _validate(self):
+        # breakpoint()
         data_source_lst = []
         reward_extra_infos_dict: dict[str, list] = defaultdict(list)
 
@@ -697,6 +698,7 @@ class RayPPOTrainer:
             )
             test_gen_batch_padded, pad_size = pad_dataproto_to_divisor(test_gen_batch, size_divisor)
             if not self.async_rollout_mode:
+                breakpoint()
                 test_output_gen_batch_padded = self.actor_rollout_wg.generate_sequences(test_gen_batch_padded)
             else:
                 test_output_gen_batch_padded = self.async_rollout_manager.generate_sequences(test_gen_batch_padded)
@@ -1046,7 +1048,7 @@ class RayPPOTrainer:
         The light-weight advantage computation is done on the driver process.
         """
         from omegaconf import OmegaConf
-
+        # breakpoint()
         from verl.utils.tracking import Tracking
 
         logger = Tracking(

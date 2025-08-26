@@ -372,7 +372,8 @@ class AsyncvLLMServer(AsyncServerBase):
         # TODO: https://github.com/vllm-project/vllm/issues/17103
         await self.engine.reset_prefix_cache()
         if self.config.rollout.free_cache_engine:
-            await self.engine.sleep(level=VLLM_SLEEP_LEVEL)
+            # await self.engine.sleep(level=VLLM_SLEEP_LEVEL)
+            await self.engine.sleep(level=1)
 
 
 def _qwen2_5_vl_dedup_image_tokens(prompt_ids: list[int], processor):
